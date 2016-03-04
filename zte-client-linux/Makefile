@@ -35,10 +35,10 @@ DEBUG          := NO
 PROFILE        := NO
 
 # ------------  name of the executable  ----------------------------------------
-EXECUTABLE      := zte-client-${PF}
+EXECUTABLE      := ${PF}-zte-client
 
 # ------------  list of all source files  --------------------------------------
-SOURCES         := eap_protocol.cpp  zte.cpp main.cpp
+SOURCES         := eap_protocol.c  zte.c main.c
 
 # ------------  compiler  ------------------------------------------------------
 
@@ -47,8 +47,8 @@ ifeq ($(PF),linux)
 CC              := gcc
 CXX             := g++
 else
-CC              := openwrt-gcc-${PF}
-CXX             := openwrt-g++-${PF}
+CC              := ${PF}-openwrt-linux-gcc
+CXX             := ${PF}-openwrt-linux-g++
 endif
 
 # ------------  compiler flags  ------------------------------------------------
